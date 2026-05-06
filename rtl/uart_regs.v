@@ -293,6 +293,8 @@ assign baud_o = enable; // baud_o is actually the enable signal
 wire 										stx_pad_o;		// received from transmitter module
 wire 										srx_pad_i;
 wire 										srx_pad;
+wire                                                                            rf_overrun;
+wire                                                                            rf_push_pulse;
 
 reg [7:0] 								wb_dat_o;
 

@@ -1,0 +1,29 @@
+****************************************
+Report : Averaged Power
+	-hierarchy
+Design : uart_top
+Version: V-2023.12-SP5-4
+Date   : Tue May  5 20:12:42 2026
+****************************************
+
+
+
+                                      Int      Switch   Leak     Total
+Hierarchy                             Power    Power    Power    Power    %
+----------------------------------------------------------------------------------
+uart_top                              9.25e-05 1.00e-06 8.67e-05 1.80e-04 100.0
+  dbg (uart_debug_if)                 9.73e-09 6.76e-09 3.00e-07 3.17e-07   0.2
+  regs (uart_regs)                    8.07e-05 7.69e-07 7.35e-05 1.55e-04  86.0
+    receiver (uart_receiver)          3.72e-05 1.96e-07 3.43e-05 7.17e-05  39.8
+      fifo_rx (uart_rfifo_fifo_width11)
+                                      2.83e-05 1.18e-08 2.05e-05 4.88e-05  27.1
+        rfifo (raminfr_addr_width4_data_width8_depth16_0)
+                                      1.90e-05 3.00e-09 8.82e-06 2.78e-05  15.4
+    i_uart_sync_flops (uart_sync_flops_1_1)
+                                      3.09e-07 1.29e-11 3.29e-08 3.42e-07   0.2
+    transmitter (uart_transmitter)    2.45e-05 7.33e-08 1.91e-05 4.37e-05  24.3
+      fifo_tx (uart_tfifo)            2.10e-05 5.39e-09 1.27e-05 3.38e-05  18.8
+        tfifo (raminfr_addr_width4_data_width8_depth16_1)
+                                      1.91e-05 3.21e-09 1.02e-05 2.93e-05  16.3
+  wb_interface (uart_wb)              1.18e-05 2.25e-07 1.28e-05 2.49e-05  13.8
+1

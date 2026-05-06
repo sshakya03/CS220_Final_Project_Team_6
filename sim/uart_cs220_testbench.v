@@ -232,9 +232,9 @@ endtask
 // ------------------------------------------------------------------
 task hard_reset_8n1;
 begin
-    wb_reset = 1'b1;
+    @ (posedge clk); #1 wb_reset = 1'b1;
     repeat(5) @(posedge clk);
-    wb_reset = 1'b0;
+    #1 wb_reset = 1'b0;
     repeat(5) @(posedge clk);
     init_uart(8'h03, 8'd5);
 end
@@ -244,6 +244,14 @@ endtask
 // MAIN TEST SEQUENCE
 // ==================================================================
 initial begin
+    $dumpfile("../ptpx/activity/uart_activity.vcd");
+    $dumpvars(0, uart_cs220_testbench);
+
+    `ifdef GLS
+        $display("Loading SDF Timing File...");
+        $sdf_annotate("../syn/netlists/uart_top.sdf", dut);
+    `endif
+
     // ----- Signal initialization -----
     wb_reset = 1'b1;
     wb_cyc   = 1'b0;
@@ -262,7 +270,7 @@ initial begin
 
     // Apply reset for 10 cycles
     repeat(10) @(posedge clk);
-    wb_reset = 1'b0;
+    #1 wb_reset = 1'b0;
     repeat(5)  @(posedge clk);
 
     $display("");
