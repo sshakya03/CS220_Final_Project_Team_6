@@ -1,0 +1,13 @@
+/home/csgrad/sshak015/cs220_final_project_team_6/rtl/raminfr.v
+/home/csgrad/sshak015/cs220_final_project_team_6/rtl/timescale.v
+/home/csgrad/sshak015/cs220_final_project_team_6/rtl/uart_debug_if.v
+/home/csgrad/sshak015/cs220_final_project_team_6/rtl/uart_defines.v
+/home/csgrad/sshak015/cs220_final_project_team_6/rtl/uart_receiver.v
+/home/csgrad/sshak015/cs220_final_project_team_6/rtl/uart_regs.v
+/home/csgrad/sshak015/cs220_final_project_team_6/rtl/uart_rfifo.v
+/home/csgrad/sshak015/cs220_final_project_team_6/rtl/uart_sync_flops.v
+/home/csgrad/sshak015/cs220_final_project_team_6/rtl/uart_tfifo.v
+/home/csgrad/sshak015/cs220_final_project_team_6/rtl/uart_top.v
+/home/csgrad/sshak015/cs220_final_project_team_6/rtl/uart_transmitter.v
+/home/csgrad/sshak015/cs220_final_project_team_6/rtl/uart_wb.v
+/home/csgrad/sshak015/cs220_final_project_team_6/sim/uart_cs220_testbench.v

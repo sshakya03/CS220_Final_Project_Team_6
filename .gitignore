@@ -1,0 +1,16 @@
+# Tool specific work and cache directories
+alib-52/
+work/
+simv*
+*.daidir/
+
+# Temporary and log files
+*.log
+*.svf
+*.vcd
+*.fsdb
+*.conf
+
+# Tool state files
+command.log
+default.svf
