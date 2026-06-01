@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-CS220 Spring 2026 - Team 6
+UART 16550 Golden Model
 UART 16550 Software Golden Model
 
 PURPOSE
@@ -47,7 +47,9 @@ MCR_OUT1 = 2
 MCR_OUT2 = 3
 MCR_LB   = 4        # loopback
 
-FIFO_DEPTH = 16
+FIFO_DEPTH = 16          # baseline
+FIFO_DEPTH_OPT2 = 8     # Opt 2: reduced FIFO depth; use UART16550(fifo_depth=8)
+OPT2_TRIGGER_LEVELS = {0: 1, 1: 2, 2: 4, 3: 6}  # Opt 2 FCR trigger level mapping
 
 
 # ---------------------------------------------------------------------------
@@ -86,7 +88,8 @@ def _divisor_to_baud(divisor, clk_hz=50_000_000):
 # ---------------------------------------------------------------------------
 
 class UART16550:
-    def __init__(self):
+    def __init__(self, fifo_depth=FIFO_DEPTH):
+        self._fifo_depth = fifo_depth
         self._dll   = 0
         self._dlm   = 0
         self._ier   = 0
@@ -161,7 +164,7 @@ class UART16550:
     # Internal: TX FIFO write + loopback
     # -----------------------------------------------------------------------
     def _thr_write(self, data):
-        if len(self._tx_fifo) < FIFO_DEPTH:
+        if len(self._tx_fifo) < self._fifo_depth:
             self._tx_fifo.append(data)
         else:
             pass    # overflow; drop (simplified)
@@ -176,7 +179,7 @@ class UART16550:
         while self._tx_fifo:
             raw = self._tx_fifo.popleft()
             rx_data = self._frame_loopback(raw)
-            if len(self._rx_fifo) < FIFO_DEPTH:
+            if len(self._rx_fifo) < self._fifo_depth:
                 self._rx_fifo.append(rx_data)
             # else: overrun (simplified: drop)
         self._update_lsr()
@@ -322,7 +325,7 @@ def run_tests():
 
     print()
     print("=======================================================")
-    print("  CS220 Team 6 - UART 16550 Software Golden Model")
+    print("  UART 16550 Software Golden Model")
     print("  Config: 8-bit bus, divisor=5 (625kbaud), loopback")
     print("=======================================================")
 

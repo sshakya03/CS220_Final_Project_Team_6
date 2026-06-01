@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# CS220 Team 6 - UART 16550 RTL Simulation Script (iverilog)
+# UART 16550 RTL Simulation Script (iverilog)
 # Usage:  bash run_iverilog.sh [--wave]
 #   --wave : also dump waveforms to sim/out/waves.vcd (view with GTKWave)
 
@@ -22,7 +22,7 @@ done
 mkdir -p "$OUT_DIR" "$LOG_DIR"
 
 echo "============================================"
-echo " CS220 Team 6 - UART 16550 Simulation"
+echo " UART 16550 Simulation"
 echo " Tool : iverilog + vvp"
 echo "============================================"
 

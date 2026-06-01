@@ -1,5 +1,5 @@
 # =============================================================================
-# CS220 Spring 2026 – Team 6
+# UART 16550 Synthesis
 # UART 16550 Design Compiler Synthesis Script
 #
 # USAGE (from the syn/ directory on the school server):
