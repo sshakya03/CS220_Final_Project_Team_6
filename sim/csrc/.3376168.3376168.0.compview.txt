@@ -1,9 +1,0 @@
-{"vcs1":{"timestamp_begin":1778037613.130571868, "rt":1.63, "ut":0.90, "st":0.19}}
-{"vcselab":{"timestamp_begin":1778037614.921103240, "rt":0.69, "ut":0.46, "st":0.12}}
-{"link":{"timestamp_begin":1778037615.745453463, "rt":0.40, "ut":0.19, "st":0.12}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1778037612.314315636}
-{"VCS_COMP_START_TIME": 1778037612.314315636}
-{"VCS_COMP_END_TIME": 1778037616.447848122}
-{"VCS_USER_OPTIONS": "-full64 -debug_access +neg_tchk +notimingcheck +incdir+../rtl -v /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/verilog/saed32nm.v -v /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/verilog/saed32nm_lvt.v -v /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/verilog/saed32nm_hvt.v +define+SDF uart_cs220_testbench.v ../syn/netlists/uart_top_netlist.v -o simv_netlist"}
-{"vcs1": {"peak_mem": 408188}}
-{"vcselab": {"peak_mem": 274468}}
