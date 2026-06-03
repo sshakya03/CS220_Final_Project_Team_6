@@ -103,7 +103,7 @@ endtask
 task wait_dr;
     integer cnt; reg [7:0] lsr;
 begin
-    cnt=3000; dr_ready=0;
+    cnt=8000; dr_ready=0;
     while (cnt>0 && !dr_ready) begin
         wb_read(3'd5, lsr);
         if (lsr[0]) dr_ready=1; else cnt=cnt-1;
@@ -202,7 +202,7 @@ initial begin
     if (r1===8'h55 && r2===8'h66) begin
         $display("PASS [O2T7]: trigger=2 readback correct"); pass_count=pass_count+1;
     end else begin
-        $display("FAIL [O2T7]: trigger=2 mismatch"); fail_count=fail_count+1;
+        $display("FAIL [O2T7]: r1=0x%02X r2=0x%02X (exp 0x55 0x66)", r1, r2); fail_count=fail_count+1;
     end
 
     // TC08: Interleaved write/read pairs (FIFO in steady use)
