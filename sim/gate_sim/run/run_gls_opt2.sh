@@ -40,8 +40,8 @@ vcs -full64 \
     $SDF_FLAG \
     +neg_tchk \
     -timescale=1ns/10ps \
-    -I "$REPO/rtl" \
-    -I "$REPO/sim" \
+    +incdir+"$REPO/rtl" \
+    +incdir+"$REPO/sim" \
     "$SAED_RVT" "$SAED_LVT" "$SAED_HVT" \
     "$NET_DIR/uart_top_opt2_netlist.v" \
     "$REPO/sim/uart_cs220_opt2_tb.v" \
