@@ -2,9 +2,9 @@
 ****************************************
 Report : constraint
         -all_violators
-Design : uart_top
+Design : uart_top_clkgate
 Version: W-2024.09-SP5-4
-Date   : Tue May  5 19:38:32 2026
+Date   : Tue Jun  2 19:55:12 2026
 ****************************************
 
 
@@ -13,31 +13,31 @@ Date   : Tue May  5 19:38:32 2026
                              Required        Actual
    Net                      Transition     Transition        Slack
    -----------------------------------------------------------------
-   dbg/n6                       0.24           0.43          -0.18  (VIOLATED)
-       PIN :   dbg/U5/Y         0.24           0.43          -0.18  (VIOLATED)
+   dbg/n5                       0.24           0.43          -0.19  (VIOLATED)
+       PIN :   dbg/U3/Y         0.24           0.43          -0.19  (VIOLATED)
    regs/receiver/fifo_rx/n21
                                 1.02           1.08          -0.06  (VIOLATED)
-       PIN :   regs/receiver/fifo_rx/U207/A1
+       PIN :   regs/receiver/fifo_rx/U181/A1
                                 1.02           1.08          -0.06  (VIOLATED)
-       PIN :   regs/receiver/fifo_rx/U57/A4
+       PIN :   regs/receiver/fifo_rx/U227/A4
                                 1.02           1.08          -0.06  (VIOLATED)
        PIN :   regs/receiver/fifo_rx/U68/A1
                                 1.02           1.08          -0.06  (VIOLATED)
-       PIN :   regs/receiver/fifo_rx/U97/A1
+       PIN :   regs/receiver/fifo_rx/U98/A1
                                 1.02           1.08          -0.06  (VIOLATED)
 
    -----------------------------------------------------------------
-   Total                      2                  -0.24  
+   Total                      2                  -0.25  
 
    max_capacitance
 
                              Required        Actual
    Net                      Capacitance    Capacitance       Slack
    -----------------------------------------------------------------
-   dbg/n14                     16.00          33.19         -17.19  (VIOLATED)
-   dbg/n6                       8.00          23.51         -15.51  (VIOLATED)
+   dbg/n5                       8.00          23.51         -15.51  (VIOLATED)
+   dbg/n6                       8.00          12.28          -4.28  (VIOLATED)
 
    -----------------------------------------------------------------
-   Total                      2                 -32.70  
+   Total                      2                 -19.79  
 
 1

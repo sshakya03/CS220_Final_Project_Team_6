@@ -1,0 +1,61 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : uart_top_pipe
+Version: W-2024.09-SP5-4
+Date   : Tue Jun  2 20:15:08 2026
+****************************************
+
+
+   max_transition
+
+                             Required        Actual
+   Net                      Transition     Transition        Slack
+   -----------------------------------------------------------------
+   dbg/n6                       0.24           0.43          -0.19  (VIOLATED)
+       PIN :   dbg/U5/Y         0.24           0.43          -0.19  (VIOLATED)
+   regs/transmitter/fifo_tx/tfifo/n119
+                                1.02           1.14          -0.12  (VIOLATED)
+       PIN :   regs/transmitter/fifo_tx/tfifo/U276/S0
+                                1.02           1.14          -0.12  (VIOLATED)
+       PIN :   regs/transmitter/fifo_tx/tfifo/U273/S0
+                                1.02           1.14          -0.12  (VIOLATED)
+       PIN :   regs/transmitter/fifo_tx/tfifo/U270/S0
+                                1.02           1.14          -0.12  (VIOLATED)
+       PIN :   regs/transmitter/fifo_tx/tfifo/U269/A1
+                                1.02           1.14          -0.12  (VIOLATED)
+       PIN :   regs/transmitter/fifo_tx/tfifo/U239/S0
+                                1.02           1.14          -0.12  (VIOLATED)
+       PIN :   regs/transmitter/fifo_tx/tfifo/U238/S0
+                                1.02           1.14          -0.12  (VIOLATED)
+       PIN :   regs/transmitter/fifo_tx/tfifo/U178/S0
+                                1.02           1.14          -0.12  (VIOLATED)
+       PIN :   regs/transmitter/fifo_tx/tfifo/U133/S0
+                                1.02           1.14          -0.12  (VIOLATED)
+   regs/receiver/fifo_rx/n21
+                                1.02           1.07          -0.04  (VIOLATED)
+       PIN :   regs/receiver/fifo_rx/U174/A1
+                                1.02           1.07          -0.04  (VIOLATED)
+       PIN :   regs/receiver/fifo_rx/U206/A1
+                                1.02           1.07          -0.04  (VIOLATED)
+       PIN :   regs/receiver/fifo_rx/U71/A1
+                                1.02           1.07          -0.04  (VIOLATED)
+       PIN :   regs/receiver/fifo_rx/U96/A1
+                                1.02           1.07          -0.04  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      3                  -0.35  
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   dbg/n6                       8.00          23.51         -15.51  (VIOLATED)
+   dbg/n9                       8.00          13.58          -5.58  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      2                 -21.09  
+
+1

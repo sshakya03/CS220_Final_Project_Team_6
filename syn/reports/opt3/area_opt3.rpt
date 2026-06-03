@@ -1,0 +1,55 @@
+ 
+****************************************
+Report : area
+Design : uart_top_pipe
+Version: W-2024.09-SP5-4
+Date   : Tue Jun  2 20:15:07 2026
+****************************************
+
+Library(s) Used:
+
+    saed32lvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db)
+    saed32hvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db)
+    saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
+
+Number of ports:                          605
+Number of nets:                          3635
+Number of cells:                         2765
+Number of combinational cells:           2006
+Number of sequential cells:               605
+Number of macros/black boxes:               0
+Number of buf/inv:                        279
+Number of references:                       3
+
+Combinational area:               4882.614588
+Buf/Inv area:                      382.486722
+Noncombinational area:            4285.884494
+Macro/Black Box area:                0.000000
+Net Interconnect area:            2070.577050
+
+Total cell area:                  9168.499083
+Total area:                      11239.076133
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  -----------------------------------------
+uart_top_pipe                     9168.4991    100.0     0.0000     0.0000  0.0000  uart_top_pipe
+dbg                                 92.0001      1.0    92.0001     0.0000  0.0000  uart_debug_if
+regs                              8253.5807     90.0  1089.0071   854.9404  0.0000  uart_regs_pipe
+regs/i_uart_sync_flops              16.0111      0.2     1.2707    14.7404  0.0000  uart_sync_flops_1_1
+regs/receiver                     3918.9005     42.7   664.8407   387.8238  0.0000  uart_receiver
+regs/receiver/fifo_rx             2866.2361     31.3   604.6086   451.8680  0.0000  uart_rfifo_fifo_width11
+regs/receiver/fifo_rx/rfifo       1809.7595     19.7   933.4709   876.2885  0.0000  raminfr_addr_width4_data_width8_depth16_0
+regs/transmitter                  2374.7216     25.9   243.7241   158.0776  0.0000  uart_transmitter
+regs/transmitter/fifo_tx          1972.9199     21.5   133.1715    92.5084  0.0000  uart_tfifo
+regs/transmitter/fifo_tx/tfifo    1747.2400     19.1   852.1448   895.0952  0.0000  raminfr_addr_width4_data_width8_depth16_1
+wb_interface                       822.9183      9.0   268.3761   554.5422  0.0000  uart_wb
+--------------------------------  ---------  -------  ---------  ---------  ------  -----------------------------------------
+Total                                                 4882.6146  4285.8845  0.0000
+
+1

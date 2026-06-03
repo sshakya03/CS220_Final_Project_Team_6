@@ -1,0 +1,52 @@
+ 
+****************************************
+check_design summary:
+Version:     W-2024.09-SP5-4
+Date:        Tue Jun  2 20:11:48 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      7
+    Unconnected ports (LINT-28)                                     5
+    Shorted outputs (LINT-31)                                       2
+
+Cells                                                              20
+    Cells do not drive (LINT-1)                                    18
+    Connected to power or ground (LINT-32)                          2
+
+Nets                                                                1
+    Unloaded nets (LINT-2)                                          1
+--------------------------------------------------------------------------------
+
+Warning: In design 'uart_regs_pipe', cell 'C1590' does not drive any nets. (LINT-1)
+Warning: In design 'uart_regs_pipe', cell 'C1591' does not drive any nets. (LINT-1)
+Warning: In design 'uart_regs_pipe', cell 'C1703' does not drive any nets. (LINT-1)
+Warning: In design 'uart_regs_pipe', cell 'B_70' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter', cell 'C551' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter', cell 'C562' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter', cell 'C572' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter', cell 'C577' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter', cell 'C588' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver', cell 'C1018' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver', cell 'C1092' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver', cell 'C1106' does not drive any nets. (LINT-1)
+Warning: In design 'uart_tfifo', cell 'C220' does not drive any nets. (LINT-1)
+Warning: In design 'uart_tfifo', cell 'C223' does not drive any nets. (LINT-1)
+Warning: In design 'uart_tfifo', cell 'C224' does not drive any nets. (LINT-1)
+Warning: In design 'uart_rfifo_fifo_width11', cell 'C877' does not drive any nets. (LINT-1)
+Warning: In design 'uart_rfifo_fifo_width11', cell 'C881' does not drive any nets. (LINT-1)
+Warning: In design 'uart_rfifo_fifo_width11', cell 'C882' does not drive any nets. (LINT-1)
+Warning: In design 'uart_top_pipe', net 'regs/transmitter/tf_overrun' driven by pin 'regs/transmitter/fifo_tx/overrun' has no loads. (LINT-2)
+Warning: In design 'uart_wb', port 'wb_adr_i[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_wb', port 'wb_adr_i[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_transmitter', port 'lcr[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_receiver', port 'lcr[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_receiver', port 'lcr[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_regs_pipe', output port 'mcr[1]' is connected directly to output port 'rts_pad_o'. (LINT-31)
+Warning: In design 'uart_regs_pipe', output port 'mcr[0]' is connected directly to output port 'dtr_pad_o'. (LINT-31)
+Warning: In design 'uart_regs_pipe', a pin on submodule 'i_uart_sync_flops' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'stage1_rst_i' is connected to logic 0. 
+Warning: In design 'uart_regs_pipe', a pin on submodule 'i_uart_sync_flops' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'stage1_clk_en_i' is connected to logic 1. 
+1

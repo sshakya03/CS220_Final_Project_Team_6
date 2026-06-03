@@ -1,7 +1,7 @@
 (DELAYFILE
 (SDFVERSION "OVI 2.1")
 (DESIGN "uart_top")
-(DATE "Tue May  5 19:38:32 2026")
+(DATE "Tue Jun  2 19:34:27 2026")
 (VENDOR "saed32rvt_ss0p75v125c")
 (PROGRAM "Synopsys Design Compiler cmos")
 (VERSION "W-2024.09-SP5-4")

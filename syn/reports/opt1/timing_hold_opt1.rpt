@@ -1,0 +1,381 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 10
+Design : uart_top_clkgate
+Version: W-2024.09-SP5-4
+Date   : Tue Jun  2 19:55:11 2026
+****************************************
+
+Operating Conditions: ss0p75v125c   Library: saed32rvt_ss0p75v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: regs/receiver/counter_t_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/ti_int_d_reg
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_clkgate   16000                 saed32rvt_ss0p75v125c
+  uart_regs_clkgate  16000                 saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  regs/receiver/counter_t_reg[0]/CLK (DFFASX1_RVT)       0.000      0.000 r
+  regs/receiver/counter_t_reg[0]/Q (DFFASX1_RVT)         0.360      0.360 r
+  regs/receiver/counter_t[0] (uart_receiver)             0.000      0.360 r
+  regs/U411/Y (NOR4X1_RVT)                               0.200      0.560 f
+  regs/ti_int_d_reg/D (DFFARX1_HVT)                      0.000      0.560 f
+  data arrival time                                                 0.560
+
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.150      0.150
+  regs/ti_int_d_reg/CLK (DFFARX1_HVT)                    0.000      0.150 r
+  library hold time                                      0.207      0.357
+  data required time                                                0.357
+  --------------------------------------------------------------------------
+  data required time                                                0.357
+  data arrival time                                                -0.560
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.203
+
+
+  Startpoint: regs/lcr_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/transmitter/bit_counter_reg[0]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_clkgate   16000                 saed32rvt_ss0p75v125c
+  uart_transmitter_clkgate
+                     8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  regs/lcr_reg[0]/CLK (DFFASX1_RVT)                      0.000      0.000 r
+  regs/lcr_reg[0]/Q (DFFASX1_RVT)                        0.412      0.412 f
+  regs/transmitter/lcr[0] (uart_transmitter_clkgate)     0.000      0.412 f
+  regs/transmitter/U4/Y (AOI22X1_RVT)                    0.182      0.594 r
+  regs/transmitter/U89/Y (NAND2X0_RVT)                   0.045      0.639 f
+  regs/transmitter/bit_counter_reg[0]/D (DFFARX1_HVT)    0.000      0.639 f
+  data arrival time                                                 0.639
+
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.150      0.150
+  regs/transmitter/bit_counter_reg[0]/CLK (DFFARX1_HVT)
+                                                         0.000      0.150 r
+  library hold time                                      0.203      0.353
+  data required time                                                0.353
+  --------------------------------------------------------------------------
+  data required time                                                0.353
+  data arrival time                                                -0.639
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.286
+
+
+  Startpoint: regs/fcr_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/rda_int_pnd_reg
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_clkgate   16000                 saed32rvt_ss0p75v125c
+  uart_regs_clkgate  16000                 saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  regs/fcr_reg[0]/CLK (DFFASX1_RVT)                      0.000      0.000 r
+  regs/fcr_reg[0]/Q (DFFASX1_RVT)                        0.366      0.366 f
+  regs/U418/Y (AO22X1_RVT)                               0.153      0.519 f
+  regs/U420/Y (OA21X1_RVT)                               0.124      0.642 f
+  regs/rda_int_pnd_reg/D (DFFARX1_HVT)                   0.000      0.642 f
+  data arrival time                                                 0.642
+
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.150      0.150
+  regs/rda_int_pnd_reg/CLK (DFFARX1_HVT)                 0.000      0.150 r
+  library hold time                                      0.203      0.353
+  data required time                                                0.353
+  --------------------------------------------------------------------------
+  data required time                                                0.353
+  data arrival time                                                -0.642
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.289
+
+
+  Startpoint: regs/receiver/counter_b_reg[7]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/receiver/counter_b_reg[7]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_clkgate   16000                 saed32rvt_ss0p75v125c
+  uart_receiver      8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  regs/receiver/counter_b_reg[7]/CLK (DFFASX1_RVT)       0.000      0.000 r
+  regs/receiver/counter_b_reg[7]/QN (DFFASX1_RVT)        0.294      0.294 r
+  regs/receiver/U192/Y (OAI22X1_RVT)                     0.162      0.455 f
+  regs/receiver/counter_b_reg[7]/D (DFFASX1_RVT)         0.000      0.455 f
+  data arrival time                                                 0.455
+
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.150      0.150
+  regs/receiver/counter_b_reg[7]/CLK (DFFASX1_RVT)       0.000      0.150 r
+  library hold time                                      0.009      0.159
+  data required time                                                0.159
+  --------------------------------------------------------------------------
+  data required time                                                0.159
+  data arrival time                                                -0.455
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.296
+
+
+  Startpoint: regs/fcr_reg[1]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/rda_int_d_reg
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_clkgate   16000                 saed32rvt_ss0p75v125c
+  uart_regs_clkgate  16000                 saed32rvt_ss0p75v125c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock wb_clk (rise edge)                0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  regs/fcr_reg[1]/CLK (DFFASX1_RVT)       0.000      0.000 r
+  regs/fcr_reg[1]/QN (DFFASX1_RVT)        0.278      0.278 f
+  regs/U78/Y (OR2X1_RVT)                  0.151      0.430 f
+  regs/U169/Y (OA221X1_RVT)               0.207      0.636 f
+  regs/rda_int_d_reg/D (DFFARX1_HVT)      0.000      0.636 f
+  data arrival time                                  0.636
+
+  clock wb_clk (rise edge)                0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  clock uncertainty                       0.150      0.150
+  regs/rda_int_d_reg/CLK (DFFARX1_HVT)    0.000      0.150 r
+  library hold time                       0.180      0.330
+  data required time                                 0.330
+  -----------------------------------------------------------
+  data required time                                 0.330
+  data arrival time                                 -0.636
+  -----------------------------------------------------------
+  slack (MET)                                        0.307
+
+
+  Startpoint: regs/receiver/counter_t_reg[5]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/receiver/counter_t_reg[6]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_clkgate   16000                 saed32rvt_ss0p75v125c
+  uart_receiver      8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  regs/receiver/counter_t_reg[5]/CLK (DFFASX1_RVT)       0.000      0.000 r
+  regs/receiver/counter_t_reg[5]/QN (DFFASX1_RVT)        0.295      0.295 r
+  regs/receiver/U284/Y (NOR2X0_RVT)                      0.147      0.441 f
+  regs/receiver/U285/Y (OA21X1_RVT)                      0.136      0.577 f
+  regs/receiver/U3/Y (OR3X1_RVT)                         0.120      0.697 f
+  regs/receiver/counter_t_reg[6]/D (DFFASX1_HVT)         0.000      0.697 f
+  data arrival time                                                 0.697
+
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.150      0.150
+  regs/receiver/counter_t_reg[6]/CLK (DFFASX1_HVT)       0.000      0.150 r
+  library hold time                                      0.221      0.371
+  data required time                                                0.371
+  --------------------------------------------------------------------------
+  data required time                                                0.371
+  data arrival time                                                -0.697
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.326
+
+
+  Startpoint: regs/receiver/counter_t_reg[2]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/receiver/counter_t_reg[2]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_clkgate   16000                 saed32rvt_ss0p75v125c
+  uart_receiver      8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  regs/receiver/counter_t_reg[2]/CLK (DFFASX1_RVT)       0.000      0.000 r
+  regs/receiver/counter_t_reg[2]/QN (DFFASX1_RVT)        0.260      0.260 f
+  regs/receiver/U291/Y (AND2X1_RVT)                      0.131      0.391 f
+  regs/receiver/U199/Y (OR2X1_RVT)                       0.113      0.504 f
+  regs/receiver/counter_t_reg[2]/D (DFFASX1_RVT)         0.000      0.504 f
+  data arrival time                                                 0.504
+
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.150      0.150
+  regs/receiver/counter_t_reg[2]/CLK (DFFASX1_RVT)       0.000      0.150 r
+  library hold time                                      0.006      0.156
+  data required time                                                0.156
+  --------------------------------------------------------------------------
+  data required time                                                0.156
+  data arrival time                                                -0.504
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.348
+
+
+  Startpoint: regs/receiver/counter_t_reg[5]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/receiver/counter_t_reg[5]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_clkgate   16000                 saed32rvt_ss0p75v125c
+  uart_regs_clkgate  16000                 saed32rvt_ss0p75v125c
+  uart_receiver      8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  regs/receiver/counter_t_reg[5]/CLK (DFFASX1_RVT)       0.000      0.000 r
+  regs/receiver/counter_t_reg[5]/Q (DFFASX1_RVT)         0.363      0.363 f
+  regs/receiver/U91/Y (AO21X1_RVT)                       0.155      0.518 f
+  regs/receiver/counter_t_reg[5]/D (DFFASX1_RVT)         0.000      0.518 f
+  data arrival time                                                 0.518
+
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.150      0.150
+  regs/receiver/counter_t_reg[5]/CLK (DFFASX1_RVT)       0.000      0.150 r
+  library hold time                                      0.007      0.157
+  data required time                                                0.157
+  --------------------------------------------------------------------------
+  data required time                                                0.157
+  data arrival time                                                -0.518
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.361
+
+
+  Startpoint: regs/lcr_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/receiver/rbit_counter_reg[0]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_clkgate   16000                 saed32rvt_ss0p75v125c
+  uart_receiver      8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  regs/lcr_reg[0]/CLK (DFFASX1_RVT)                      0.000      0.000 r
+  regs/lcr_reg[0]/Q (DFFASX1_RVT)                        0.412      0.412 f
+  regs/receiver/lcr[0] (uart_receiver)                   0.000      0.412 f
+  regs/receiver/U152/Y (INVX0_HVT)                       0.121      0.533 r
+  regs/receiver/U13/Y (OA22X1_RVT)                       0.133      0.666 r
+  regs/receiver/U153/Y (NAND2X0_RVT)                     0.051      0.717 f
+  regs/receiver/rbit_counter_reg[0]/D (DFFARX1_HVT)      0.000      0.717 f
+  data arrival time                                                 0.717
+
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.150      0.150
+  regs/receiver/rbit_counter_reg[0]/CLK (DFFARX1_HVT)    0.000      0.150 r
+  library hold time                                      0.201      0.351
+  data required time                                                0.351
+  --------------------------------------------------------------------------
+  data required time                                                0.351
+  data arrival time                                                -0.717
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.366
+
+
+  Startpoint: regs/lcr_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/receiver/rshift_reg[7]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_clkgate   16000                 saed32rvt_ss0p75v125c
+  uart_receiver      8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  regs/lcr_reg[0]/CLK (DFFASX1_RVT)                      0.000      0.000 r
+  regs/lcr_reg[0]/Q (DFFASX1_RVT)                        0.417      0.417 r
+  regs/receiver/lcr[0] (uart_receiver)                   0.000      0.417 r
+  regs/receiver/U131/Y (AOI21X1_RVT)                     0.211      0.628 f
+  regs/receiver/U134/Y (AO21X1_RVT)                      0.132      0.760 f
+  regs/receiver/rshift_reg[7]/D (DFFARX1_HVT)            0.000      0.760 f
+  data arrival time                                                 0.760
+
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  clock uncertainty                                      0.150      0.150
+  regs/receiver/rshift_reg[7]/CLK (DFFARX1_HVT)          0.000      0.150 r
+  library hold time                                      0.211      0.361
+  data required time                                                0.361
+  --------------------------------------------------------------------------
+  data required time                                                0.361
+  data arrival time                                                -0.760
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.399
+
+
+1

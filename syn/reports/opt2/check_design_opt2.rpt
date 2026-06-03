@@ -1,0 +1,90 @@
+ 
+****************************************
+check_design summary:
+Version:     W-2024.09-SP5-4
+Date:        Tue Jun  2 20:03:40 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     25
+    Multiply driven inputs (LINT-6)                                18
+    Unconnected ports (LINT-28)                                     5
+    Shorted outputs (LINT-31)                                       2
+
+Cells                                                              14
+    Cells do not drive (LINT-1)                                    12
+    Connected to power or ground (LINT-32)                          2
+
+Tristate                                                           26
+    A tristate bus has a non tri-state driver (LINT-34)            26
+--------------------------------------------------------------------------------
+
+Warning: In design 'uart_regs_opt2', cell 'C1580' does not drive any nets. (LINT-1)
+Warning: In design 'uart_regs_opt2', cell 'C1581' does not drive any nets. (LINT-1)
+Warning: In design 'uart_regs_opt2', cell 'C1689' does not drive any nets. (LINT-1)
+Warning: In design 'uart_regs_opt2', cell 'B_68' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter_opt2', cell 'C551' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter_opt2', cell 'C562' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter_opt2', cell 'C572' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter_opt2', cell 'C577' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter_opt2', cell 'C588' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_opt2', cell 'C1018' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_opt2', cell 'C1092' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_opt2', cell 'C1106' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter_opt2', input port 'clk' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_transmitter_opt2', input port 'wb_rst_i' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_transmitter_opt2', input port 'tf_push' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_transmitter_opt2', input port 'wb_dat_i[7]' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_transmitter_opt2', input port 'wb_dat_i[6]' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_transmitter_opt2', input port 'wb_dat_i[5]' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_transmitter_opt2', input port 'wb_dat_i[4]' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_transmitter_opt2', input port 'wb_dat_i[3]' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_transmitter_opt2', input port 'wb_dat_i[2]' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_transmitter_opt2', input port 'wb_dat_i[1]' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_transmitter_opt2', input port 'wb_dat_i[0]' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_transmitter_opt2', input port 'tx_reset' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_transmitter_opt2', input port 'lsr_mask' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_receiver_opt2', input port 'clk' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_receiver_opt2', input port 'wb_rst_i' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_receiver_opt2', input port 'rf_pop' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_receiver_opt2', input port 'rx_reset' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_receiver_opt2', input port 'lsr_mask' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'uart_wb', port 'wb_adr_i[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_wb', port 'wb_adr_i[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_transmitter_opt2', port 'lcr[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_receiver_opt2', port 'lcr[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_receiver_opt2', port 'lcr[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_regs_opt2', output port 'mcr[1]' is connected directly to output port 'rts_pad_o'. (LINT-31)
+Warning: In design 'uart_regs_opt2', output port 'mcr[0]' is connected directly to output port 'dtr_pad_o'. (LINT-31)
+Warning: In design 'uart_regs_opt2', a pin on submodule 'i_uart_sync_flops' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'stage1_rst_i' is connected to logic 0. 
+Warning: In design 'uart_regs_opt2', a pin on submodule 'i_uart_sync_flops' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'stage1_clk_en_i' is connected to logic 1. 
+Warning: In design 'uart_top_opt2', three-state bus 'wb_dat8_i[0]' has non three-state driver 'wb_interface/C438/Z_0'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'wb_dat8_i[1]' has non three-state driver 'wb_interface/C438/Z_1'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'wb_dat8_i[2]' has non three-state driver 'wb_interface/C438/Z_2'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'wb_dat8_i[3]' has non three-state driver 'wb_interface/C438/Z_3'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'wb_dat8_i[4]' has non three-state driver 'wb_interface/C438/Z_4'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'wb_dat8_i[5]' has non three-state driver 'wb_interface/C438/Z_5'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'wb_dat8_i[6]' has non three-state driver 'wb_interface/C438/Z_6'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'wb_dat8_i[7]' has non three-state driver 'wb_interface/C438/Z_7'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/rf_push_pulse' has non three-state driver 'regs/receiver/C1048/Z'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/rx_reset' has non three-state driver 'regs/rx_reset_reg/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/rf_pop' has non three-state driver 'regs/rf_pop_reg/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/lsr_mask' has non three-state driver 'regs/C1452/Z'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/tx_reset' has non three-state driver 'regs/tx_reset_reg/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/tf_push' has non three-state driver 'regs/tf_push_reg/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/transmitter/tf_pop' has non three-state driver 'regs/transmitter/tf_pop_reg/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/receiver/rf_data_in[0]' has non three-state driver 'regs/receiver/rf_data_in_reg[0]/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/receiver/rf_data_in[1]' has non three-state driver 'regs/receiver/rf_data_in_reg[1]/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/receiver/rf_data_in[2]' has non three-state driver 'regs/receiver/rf_data_in_reg[2]/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/receiver/rf_data_in[3]' has non three-state driver 'regs/receiver/rf_data_in_reg[3]/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/receiver/rf_data_in[4]' has non three-state driver 'regs/receiver/rf_data_in_reg[4]/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/receiver/rf_data_in[5]' has non three-state driver 'regs/receiver/rf_data_in_reg[5]/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/receiver/rf_data_in[6]' has non three-state driver 'regs/receiver/rf_data_in_reg[6]/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/receiver/rf_data_in[7]' has non three-state driver 'regs/receiver/rf_data_in_reg[7]/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/receiver/rf_data_in[8]' has non three-state driver 'regs/receiver/rf_data_in_reg[8]/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/receiver/rf_data_in[9]' has non three-state driver 'regs/receiver/rf_data_in_reg[9]/Q'. (LINT-34)
+Warning: In design 'uart_top_opt2', three-state bus 'regs/receiver/rf_data_in[10]' has non three-state driver 'regs/receiver/rf_data_in_reg[10]/Q'. (LINT-34)
+1

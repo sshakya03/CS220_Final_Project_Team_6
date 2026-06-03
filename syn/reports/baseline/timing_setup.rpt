@@ -6,7 +6,7 @@ Report : timing
         -max_paths 10
 Design : uart_top
 Version: W-2024.09-SP5-4
-Date   : Tue May  5 19:38:31 2026
+Date   : Tue Jun  2 19:34:25 2026
 ****************************************
 
 Operating Conditions: ss0p75v125c   Library: saed32rvt_ss0p75v125c

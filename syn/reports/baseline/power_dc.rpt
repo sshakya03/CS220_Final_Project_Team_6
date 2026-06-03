@@ -1,0 +1,71 @@
+Information: Propagating switching activity (high effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort high
+Design : uart_top
+Version: W-2024.09-SP5-4
+Date   : Tue Jun  2 19:34:26 2026
+****************************************
+
+
+Library(s) Used:
+
+    saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
+    saed32hvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db)
+    saed32lvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db)
+
+
+Operating Conditions: ss0p75v125c   Library: saed32rvt_ss0p75v125c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+uart_top               16000             saed32rvt_ss0p75v125c
+uart_wb                8000              saed32rvt_ss0p75v125c
+uart_regs              16000             saed32rvt_ss0p75v125c
+uart_debug_if          ForQA             saed32rvt_ss0p75v125c
+uart_transmitter       8000              saed32rvt_ss0p75v125c
+uart_sync_flops_1_1    ForQA             saed32rvt_ss0p75v125c
+uart_receiver          8000              saed32rvt_ss0p75v125c
+uart_tfifo             8000              saed32rvt_ss0p75v125c
+uart_rfifo_fifo_width11
+                       8000              saed32rvt_ss0p75v125c
+raminfr_addr_width4_data_width8_depth16_1
+                       8000              saed32rvt_ss0p75v125c
+raminfr_addr_width4_data_width8_depth16_0
+                       8000              saed32rvt_ss0p75v125c
+
+
+Global Operating Voltage = 0.75 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+uart_top                                  2.782  181.135 7.59e+07  259.792 100.0
+  dbg (uart_debug_if)                  7.95e-02 6.02e-02 2.94e+05    0.434   0.2
+  regs (uart_regs)                        1.945  157.176 6.49e+07  224.049  86.2
+    receiver (uart_receiver)              0.433   72.573 3.01e+07  103.123  39.7
+      fifo_rx (uart_rfifo_fifo_width11)
+                                          0.217   55.577 1.82e+07   73.985  28.5
+        rfifo (raminfr_addr_width4_data_width8_depth16_0)
+                                       6.72e-03   37.333 8.86e+06   46.202  17.8
+    i_uart_sync_flops (uart_sync_flops_1_1)
+                                       1.18e-02    0.628 3.27e+04    0.673   0.3
+    transmitter (uart_transmitter)        0.216   46.441 1.76e+07   64.226  24.7
+      fifo_tx (uart_tfifo)                0.142   39.974 1.25e+07   52.577  20.2
+        tfifo (raminfr_addr_width4_data_width8_depth16_1)
+                                       9.51e-02   36.171 1.07e+07   46.978  18.1
+  wb_interface (uart_wb)                  0.757   23.899 1.07e+07   35.309  13.6
+1

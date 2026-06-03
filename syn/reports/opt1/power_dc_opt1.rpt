@@ -6,16 +6,16 @@ Warning: Design has unannotated sequential cell outputs. (PWR-415)
 Report : power
         -hier
         -analysis_effort high
-Design : uart_top
+Design : uart_top_clkgate
 Version: W-2024.09-SP5-4
-Date   : Tue May  5 19:38:32 2026
+Date   : Tue Jun  2 19:55:12 2026
 ****************************************
 
 
 Library(s) Used:
 
-    saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
     saed32hvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db)
+    saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
     saed32lvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db)
 
 
@@ -24,11 +24,12 @@ Wire Load Model Mode: enclosed
 
 Design        Wire Load Model            Library
 ------------------------------------------------
-uart_top               16000             saed32rvt_ss0p75v125c
+uart_top_clkgate       16000             saed32rvt_ss0p75v125c
 uart_wb                8000              saed32rvt_ss0p75v125c
-uart_regs              16000             saed32rvt_ss0p75v125c
+uart_regs_clkgate      16000             saed32rvt_ss0p75v125c
 uart_debug_if          ForQA             saed32rvt_ss0p75v125c
-uart_transmitter       8000              saed32rvt_ss0p75v125c
+uart_transmitter_clkgate
+                       8000              saed32rvt_ss0p75v125c
 uart_sync_flops_1_1    ForQA             saed32rvt_ss0p75v125c
 uart_receiver          8000              saed32rvt_ss0p75v125c
 uart_tfifo             8000              saed32rvt_ss0p75v125c
@@ -53,19 +54,20 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-uart_top                                  2.782  181.135 7.59e+07  259.792 100.0
-  dbg (uart_debug_if)                  7.95e-02 6.02e-02 2.94e+05    0.434   0.2
-  regs (uart_regs)                        1.945  157.176 6.49e+07  224.049  86.2
-    receiver (uart_receiver)              0.433   72.573 3.01e+07  103.123  39.7
+uart_top_clkgate                          2.846  181.002 7.46e+07  258.409 100.0
+  dbg (uart_debug_if)                  7.13e-02 5.65e-02 4.31e+05    0.559   0.2
+  regs (uart_regs_clkgate)                1.959  156.923 6.41e+07  222.950  86.3
+    receiver (uart_receiver)              0.436   72.523 2.67e+07   99.627  38.6
       fifo_rx (uart_rfifo_fifo_width11)
-                                          0.217   55.577 1.82e+07   73.985  28.5
+                                          0.219   55.523 1.64e+07   72.117  27.9
         rfifo (raminfr_addr_width4_data_width8_depth16_0)
-                                       6.72e-03   37.333 8.86e+06   46.202  17.8
+                                       6.77e-03   37.372 8.53e+06   45.910  17.8
     i_uart_sync_flops (uart_sync_flops_1_1)
-                                       1.18e-02    0.628 3.27e+04    0.673   0.3
-    transmitter (uart_transmitter)        0.216   46.441 1.76e+07   64.226  24.7
-      fifo_tx (uart_tfifo)                0.142   39.974 1.25e+07   52.577  20.2
+                                       1.17e-02    0.628 3.27e+04    0.673   0.3
+    transmitter (uart_transmitter_clkgate)
+                                          0.128   45.999 1.65e+07   62.609  24.2
+      fifo_tx (uart_tfifo)             5.40e-02   39.547 1.27e+07   52.346  20.3
         tfifo (raminfr_addr_width4_data_width8_depth16_1)
-                                       9.51e-02   36.171 1.07e+07   46.978  18.1
-  wb_interface (uart_wb)                  0.757   23.899 1.07e+07   35.309  13.6
+                                       7.69e-03   35.744 1.10e+07   46.721  18.1
+  wb_interface (uart_wb)                  0.816   24.022 1.01e+07   34.899  13.5
 1
