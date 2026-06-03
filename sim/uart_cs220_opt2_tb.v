@@ -1,20 +1,19 @@
 // Opt 2 (8-deep FIFO) testbench — 10 testcases
+// Compiled against 32-bit bus netlist (synthesized without DATA_BUS_WIDTH_8)
 
 `timescale 1ns/10ps
-`define DATA_BUS_WIDTH_8
 
 module uart_cs220_opt2_tb;
-
-`include "uart_defines.v"
 
 reg  clk;
 reg  wb_reset;
 initial clk = 0;
 always  #10 clk = ~clk;
 
-reg  [`UART_ADDR_WIDTH-1:0] wb_adr;
-reg  [`UART_DATA_WIDTH-1:0] wb_wdat;
-wire [`UART_DATA_WIDTH-1:0] wb_rdat;
+// 32-bit WB interface matching synthesized netlist
+reg  [4:0]  wb_adr;
+reg  [31:0] wb_wdat;
+wire [31:0] wb_rdat;
 reg  [3:0]  wb_sel;
 reg         wb_we, wb_cyc, wb_stb;
 wire        wb_ack, wb_int;
@@ -26,7 +25,7 @@ reg [7:0] r1,r2,r3,r4,r5,r6,r7,r8;
 reg [7:0] lsr_val;
 reg       dr_ready;
 
-uart_top_opt2 #(`UART_DATA_WIDTH, `UART_ADDR_WIDTH) dut (
+uart_top_opt2 dut (
     .wb_clk_i(clk), .wb_rst_i(wb_reset),
     .wb_adr_i(wb_adr), .wb_dat_i(wb_wdat), .wb_dat_o(wb_rdat),
     .wb_we_i(wb_we), .wb_stb_i(wb_stb), .wb_cyc_i(wb_cyc),
@@ -36,12 +35,24 @@ uart_top_opt2 #(`UART_DATA_WIDTH, `UART_ADDR_WIDTH) dut (
     .ri_pad_i(ri), .dcd_pad_i(dcd)
 );
 
+// 32-bit big-endian byte-lane encoding for UART register access
 task wb_write;
-    input [`UART_ADDR_WIDTH-1:0] addr; input [`UART_DATA_WIDTH-1:0] data;
+    input [2:0] reg_addr;
+    input [7:0] data;
+    reg [4:0]  waddr;
+    reg [3:0]  sel;
+    reg [31:0] wdat;
     integer timeout;
 begin
+    waddr = {2'b00, reg_addr[2], 2'b00};
+    case (reg_addr[1:0])
+        2'b00: begin sel = 4'b1000; wdat = {data, 24'b0}; end
+        2'b01: begin sel = 4'b0100; wdat = {8'b0, data, 16'b0}; end
+        2'b10: begin sel = 4'b0010; wdat = {16'b0, data, 8'b0}; end
+        2'b11: begin sel = 4'b0001; wdat = {24'b0, data}; end
+    endcase
     @(posedge clk); #1;
-    wb_adr=addr; wb_wdat=data; wb_we=1; wb_cyc=1; wb_stb=1; wb_sel=4'hF;
+    wb_adr=waddr; wb_wdat=wdat; wb_sel=sel; wb_we=1; wb_cyc=1; wb_stb=1;
     timeout=200;
     while (!wb_ack && timeout>0) begin @(posedge clk); timeout=timeout-1; end
     #1; wb_cyc=0; wb_stb=0; wb_we=0; @(posedge clk);
@@ -49,14 +60,32 @@ end
 endtask
 
 task wb_read;
-    input  [`UART_ADDR_WIDTH-1:0] addr; output [`UART_DATA_WIDTH-1:0] data;
+    input  [2:0] reg_addr;
+    output [7:0] data;
+    reg [4:0]  raddr;
+    reg [3:0]  sel;
+    reg [31:0] rdat;
     integer timeout;
 begin
+    raddr = {2'b00, reg_addr[2], 2'b00};
+    case (reg_addr[1:0])
+        2'b00: sel = 4'b1000;
+        2'b01: sel = 4'b0100;
+        2'b10: sel = 4'b0010;
+        2'b11: sel = 4'b0001;
+    endcase
     @(posedge clk); #1;
-    wb_adr=addr; wb_we=0; wb_cyc=1; wb_stb=1; wb_sel=4'hF;
+    wb_adr=raddr; wb_sel=sel; wb_we=0; wb_cyc=1; wb_stb=1;
     timeout=200;
     while (!wb_ack && timeout>0) begin @(posedge clk); timeout=timeout-1; end
-    #1; data=wb_rdat; wb_cyc=0; wb_stb=0; @(posedge clk);
+    #1; rdat=wb_rdat; wb_cyc=0; wb_stb=0;
+    case (reg_addr[1:0])
+        2'b00: data = rdat[31:24];
+        2'b01: data = rdat[23:16];
+        2'b10: data = rdat[15:8];
+        2'b11: data = rdat[7:0];
+    endcase
+    @(posedge clk);
 end
 endtask
 
@@ -105,7 +134,7 @@ initial begin
         $sdf_annotate("../syn/netlists/uart_top_opt2.sdf", dut);
     `endif
 
-    wb_reset=1; wb_cyc=0; wb_stb=0; wb_we=0; wb_sel=4'hF;
+    wb_reset=1; wb_cyc=0; wb_stb=0; wb_we=0; wb_sel=4'h0;
     wb_adr=0; wb_wdat=0; srx=1; cts=1; dsr=1; ri=1; dcd=1;
     pass_count=0; fail_count=0;
     repeat(10) @(posedge clk); #1 wb_reset=0; repeat(5) @(posedge clk);
@@ -164,7 +193,6 @@ initial begin
     end
 
     // TC07: FCR trigger level 01 (trigger=2 in 8-deep config)
-    // Write 2 bytes, read both; verify no overrun
     init_uart(8'h03, 8'd5);
     wb_write(3'd2, 8'hC5); // FCR: FIFO_EN | trigger=01 (level=2)
     wb_write(3'd0,8'h55); wb_write(3'd0,8'h66);

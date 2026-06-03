@@ -38,7 +38,6 @@ echo " Opt 3 Gate-Level Simulation"
 echo "============================================"
 
 vcs -full64 \
-    -DDATA_BUS_WIDTH_8 \
     $SDF_FLAG \
     $TCHK_FLAG \
     -timescale=1ns/10ps \
