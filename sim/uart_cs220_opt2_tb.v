@@ -193,6 +193,8 @@ initial begin
     end
 
     // TC07: FCR trigger level 01 (trigger=2 in 8-deep config)
+    // Wait for any in-flight bytes from TC06 (BB was in TX shift register during TC06 flush)
+    repeat(1200) @(posedge clk);
     init_uart(8'h03, 8'd5);
     wb_write(3'd2, 8'hC5); // FCR: FIFO_EN | trigger=01 (level=2)
     wb_write(3'd0,8'h55); wb_write(3'd0,8'h66);
