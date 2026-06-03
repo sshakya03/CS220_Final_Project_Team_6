@@ -10,7 +10,7 @@ ACT_DIR="$REPO/ptpx/activity"
 LOG_DIR="$SIM_DIR/log"
 BIN_DIR="$SIM_DIR/bin"
 
-SAED_RVT="/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/verilog/saed32nm_rvt.v"
+SAED_RVT="/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/verilog/saed32nm.v"
 SAED_LVT="/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/verilog/saed32nm_lvt.v"
 SAED_HVT="/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/verilog/saed32nm_hvt.v"
 
