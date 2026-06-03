@@ -44,6 +44,7 @@ vcs -full64 \
     +incdir+"$REPO/rtl" \
     +incdir+"$REPO/sim" \
     "$SAED_RVT" "$SAED_LVT" "$SAED_HVT" \
+    "$REPO/rtl/raminfr.v" \
     "$REPO/rtl/uart_tfifo_opt2.v" \
     "$REPO/rtl/uart_rfifo_opt2.v" \
     "$NET_DIR/uart_top_opt2_netlist.v" \
