@@ -163,7 +163,7 @@ module uart_rfifo_opt2 (clk,
 	);
 
 
-parameter fifo_width     = `UART_FIFO_WIDTH;
+parameter fifo_width     = `UART_FIFO_WIDTH + 3; // 8 data + 3 error flag bits to match 11-bit netlist ports
 parameter fifo_depth     = 8;   // reduced from 16
 parameter fifo_pointer_w = 3;   // reduced from 4
 parameter fifo_counter_w = 4;   // reduced from 5
