@@ -1,0 +1,29 @@
+****************************************
+Report : Averaged Power
+	-cell_power
+	-significant_digits
+	-sort_by cell_internal_power
+Design : uart_top_pipe
+Version: V-2023.12-SP5-4
+Date   : Wed Jun  3 01:25:59 2026
+****************************************
+
+
+
+  Attributes
+  ----------
+      a  -  Annotated internal | leakage | switching power 
+      b  -  Black-box (unresolved) cell
+      c  -  Clock pin internal power only
+      d  -  Does not include clock pin internal power
+      h  -  Hierarchical cell
+
+                        Internal             Switching            Leakage              Total
+Cell                    Power                Power                Power                Power               (     %)   Attrs
+----------------------------------------------------------------------------------------------------------------------------
+regs                    8.1034e-05           6.3971e-07           9.4071e-05           1.7574e-04          (87.96%)   h
+wb_interface            1.1949e-05           2.1163e-07           1.1148e-05           2.3308e-05          (11.67%)   h
+dbg                     4.4296e-11           0.0000e+00           7.5306e-07           7.5310e-07          ( 0.38%)   h
+----------------------------------------------------------------------------------------------------------------------------
+Totals (3 cells)        9.2982e-05           8.5134e-07           1.0597e-04           1.9981e-04          (100.0%)
+1
