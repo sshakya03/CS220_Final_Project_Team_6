@@ -23,8 +23,10 @@ done
 
 SIM_BIN="$BIN_DIR/simv_opt2"
 SDF_FLAG=""
+TCHK_FLAG="+notimingchecks"
 if [ "$USE_SDF" -eq 1 ]; then
     SDF_FLAG="+define+GLS"
+    TCHK_FLAG="+neg_tchk"
     SIM_BIN="$BIN_DIR/simv_opt2_sdf"
     echo "Mode: GLS with SDF (timing-accurate)"
 else
@@ -38,7 +40,7 @@ echo "============================================"
 vcs -full64 \
     -DDATA_BUS_WIDTH_8 \
     $SDF_FLAG \
-    +neg_tchk \
+    $TCHK_FLAG \
     -timescale=1ns/10ps \
     +incdir+"$REPO/rtl" \
     +incdir+"$REPO/sim" \
