@@ -1,4 +1,4 @@
-// CS220 Spring 2026 - Team 6
+// UART 16550 - Team 6
 // UART 16550 Verification Testbench
 // 20 testcases: 10 random-constrained (RC01-RC10) + 10 corner case (CC01-CC10)
 // Uses 8-bit bus mode and MCR loopback for self-checking
@@ -16,7 +16,7 @@
 
 module uart_cs220_testbench;
 
-`include "uart_defines.v"
+`include "uart_testbench_defines.v"
 
 // ------------------------------------------------------------------
 // Clock / Reset
@@ -275,7 +275,7 @@ initial begin
 
     $display("");
     $display("=======================================================");
-    $display("  CS220 Team 6 - UART 16550 Verification Testbench");
+    $display("  UART 16550 Verification Testbench");
     $display("  Config: 8-bit bus, divisor=5 (625kbaud), loopback");
     $display("=======================================================");
 

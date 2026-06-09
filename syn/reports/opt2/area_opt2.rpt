@@ -1,0 +1,53 @@
+ 
+****************************************
+Report : area
+Design : uart_top_opt2
+Version: W-2024.09-SP5-4
+Date   : Tue Jun  2 20:06:32 2026
+****************************************
+
+Library(s) Used:
+
+    saed32lvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db)
+    saed32hvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db)
+    saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
+
+Number of ports:                          490
+Number of nets:                          1879
+Number of cells:                         1316
+Number of combinational cells:           1022
+Number of sequential cells:               275
+Number of macros/black boxes:               0
+Number of buf/inv:                        186
+Number of references:                       3
+
+Combinational area:               2369.130398
+Buf/Inv area:                      250.077697
+Noncombinational area:            1948.776225
+Macro/Black Box area:                0.000000
+Net Interconnect area:             920.514579
+
+Total cell area:                  4317.906623
+Total area:                       5238.421202
+
+Information: This design contains black box (unknown) components. (RPT-8)
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------------------
+uart_top_opt2                     4317.9066    100.0     0.0000     0.0000  0.0000  uart_top_opt2
+dbg                                 93.2708      2.2    93.2708     0.0000  0.0000  uart_debug_if
+regs                              3421.2866     79.2  1075.0291   841.7249  0.0000  uart_regs_opt2
+regs/i_uart_sync_flops              16.0111      0.4     1.2707    14.7404  0.0000  uart_sync_flops_1_1
+regs/receiver                     1090.7861     25.3   705.5038   385.2823  0.0000  uart_receiver_opt2
+regs/transmitter                   397.7354      9.2   241.1827   156.5527  0.0000  uart_transmitter_opt2
+wb_interface                       803.3492     18.6   252.8733   550.4759  0.0000  uart_wb
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------------------
+Total                                                 2369.1304  1948.7762  0.0000
+
+1

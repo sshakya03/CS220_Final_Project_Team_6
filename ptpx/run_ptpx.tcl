@@ -1,5 +1,5 @@
 # =============================================================================
-# CS220 Spring 2026 – Team 6
+# UART 16550 PrimeTime PX
 # UART 16550 PrimeTime PX (PTPX) Power Analysis Script
 #
 # USAGE (from ptpx/ directory on the school server):

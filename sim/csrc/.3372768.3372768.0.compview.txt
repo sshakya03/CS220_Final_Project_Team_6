@@ -1,7 +1,0 @@
-Command exited with non-zero status 255
-{"vcs1":{"timestamp_begin":1778037439.993562689, "rt":0.21, "ut":0.06, "st":0.05}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1778037439.148872628}
-{"VCS_COMP_START_TIME": 1778037439.148872628}
-{"VCS_COMP_END_TIME": 1778037440.452652793}
-{"VCS_USER_OPTIONS": "-full64 -debug_access +neg_tchk +notimingcheck -v /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/../../../verilog/saed32nm_rvt.v -v /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_lvt/db_nldm/../../../verilog/saed32nm_lvt.v -v /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_hvt/db_nldm/../../../verilog/saed32nm_hvt.v +define+SDF uart_cs220_testbench.v ../syn/netlists/uart_top_netlist.v -o simv_netlist"}
-{"vcs1": {"peak_mem": 386952}}

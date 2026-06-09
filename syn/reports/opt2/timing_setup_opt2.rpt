@@ -1,0 +1,486 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : uart_top_opt2
+Version: W-2024.09-SP5-4
+Date   : Tue Jun  2 20:06:32 2026
+****************************************
+
+Operating Conditions: ss0p75v125c   Library: saed32rvt_ss0p75v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: wb_interface/wb_sel_is_reg[2]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: wb_interface/wb_dat_o_reg[25]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_opt2      8000                  saed32rvt_ss0p75v125c
+  uart_wb            8000                  saed32rvt_ss0p75v125c
+  uart_regs_opt2     8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  wb_interface/wb_sel_is_reg[2]/CLK (DFFARX1_HVT)        0.000      0.000 r
+  wb_interface/wb_sel_is_reg[2]/Q (DFFARX1_HVT)          2.282      2.282 f
+  wb_interface/U106/Y (OR2X1_LVT)                        0.171      2.453 f
+  wb_interface/U105/Y (INVX1_LVT)                        0.048      2.501 r
+  wb_interface/U104/Y (AND2X1_LVT)                       0.101      2.602 r
+  wb_interface/U103/Y (OR2X1_LVT)                        0.096      2.698 r
+  wb_interface/wb_adr_int[1] (uart_wb)                   0.000      2.698 r
+  regs/wb_addr_i[1] (uart_regs_opt2)                     0.000      2.698 r
+  regs/U267/Y (NAND2X0_RVT)                              0.077      2.775 f
+  regs/U443/Y (OR2X1_HVT)                                0.498      3.273 f
+  regs/U163/Y (NOR2X0_HVT)                               0.728      4.001 r
+  regs/U89/Y (OR3X1_HVT)                                 0.807      4.808 r
+  regs/U454/Y (OR2X1_RVT)                                0.200      5.009 r
+  regs/U452/Y (OA21X1_RVT)                               0.161      5.170 r
+  regs/wb_dat_o[1] (uart_regs_opt2)                      0.000      5.170 r
+  wb_interface/wb_dat8_o[1] (uart_wb)                    0.000      5.170 r
+  wb_interface/U60/Y (AO222X1_HVT)                       1.889      7.059 r
+  wb_interface/wb_dat_o_reg[25]/D (DFFARX1_HVT)          0.000      7.059 r
+  data arrival time                                                 7.059
+
+  clock wb_clk (rise edge)                               9.016      9.016
+  clock network delay (ideal)                            0.000      9.016
+  clock uncertainty                                     -0.150      8.866
+  wb_interface/wb_dat_o_reg[25]/CLK (DFFARX1_HVT)        0.000      8.866 r
+  library setup time                                    -1.784      7.082
+  data required time                                                7.082
+  --------------------------------------------------------------------------
+  data required time                                                7.082
+  data arrival time                                                -7.059
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.023
+
+
+  Startpoint: wb_interface/wb_sel_is_reg[2]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: wb_interface/wb_dat_o_reg[0]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_opt2      8000                  saed32rvt_ss0p75v125c
+  uart_wb            8000                  saed32rvt_ss0p75v125c
+  uart_regs_opt2     8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  wb_interface/wb_sel_is_reg[2]/CLK (DFFARX1_HVT)        0.000      0.000 r
+  wb_interface/wb_sel_is_reg[2]/Q (DFFARX1_HVT)          2.282      2.282 f
+  wb_interface/U106/Y (OR2X1_LVT)                        0.171      2.453 f
+  wb_interface/U105/Y (INVX1_LVT)                        0.048      2.501 r
+  wb_interface/U104/Y (AND2X1_LVT)                       0.101      2.602 r
+  wb_interface/U103/Y (OR2X1_LVT)                        0.096      2.698 r
+  wb_interface/wb_adr_int[1] (uart_wb)                   0.000      2.698 r
+  regs/wb_addr_i[1] (uart_regs_opt2)                     0.000      2.698 r
+  regs/U441/Y (NAND2X0_RVT)                              0.064      2.762 f
+  regs/U342/Y (OR2X1_LVT)                                0.112      2.873 f
+  regs/U279/Y (INVX0_HVT)                                0.135      3.008 r
+  regs/U295/Y (AOI22X1_HVT)                              1.828      4.836 f
+  regs/U344/Y (AND2X1_LVT)                               0.140      4.976 f
+  regs/U75/Y (AND3X1_RVT)                                0.168      5.143 f
+  regs/U414/Y (NOR2X0_LVT)                               0.107      5.250 r
+  regs/wb_dat_o[0] (uart_regs_opt2)                      0.000      5.250 r
+  wb_interface/wb_dat8_o[0] (uart_wb)                    0.000      5.250 r
+  wb_interface/U43/Y (AO222X1_HVT)                       1.800      7.050 r
+  wb_interface/wb_dat_o_reg[0]/D (DFFARX1_HVT)           0.000      7.050 r
+  data arrival time                                                 7.050
+
+  clock wb_clk (rise edge)                               9.016      9.016
+  clock network delay (ideal)                            0.000      9.016
+  clock uncertainty                                     -0.150      8.866
+  wb_interface/wb_dat_o_reg[0]/CLK (DFFARX1_HVT)         0.000      8.866 r
+  library setup time                                    -1.783      7.082
+  data required time                                                7.082
+  --------------------------------------------------------------------------
+  data required time                                                7.082
+  data arrival time                                                -7.050
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.032
+
+
+  Startpoint: wb_interface/wb_sel_is_reg[2]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: wb_interface/wb_dat_o_reg[16]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_opt2      8000                  saed32rvt_ss0p75v125c
+  uart_wb            8000                  saed32rvt_ss0p75v125c
+  uart_regs_opt2     8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  wb_interface/wb_sel_is_reg[2]/CLK (DFFARX1_HVT)        0.000      0.000 r
+  wb_interface/wb_sel_is_reg[2]/Q (DFFARX1_HVT)          2.282      2.282 f
+  wb_interface/U106/Y (OR2X1_LVT)                        0.171      2.453 f
+  wb_interface/U105/Y (INVX1_LVT)                        0.048      2.501 r
+  wb_interface/U104/Y (AND2X1_LVT)                       0.101      2.602 r
+  wb_interface/U103/Y (OR2X1_LVT)                        0.096      2.698 r
+  wb_interface/wb_adr_int[1] (uart_wb)                   0.000      2.698 r
+  regs/wb_addr_i[1] (uart_regs_opt2)                     0.000      2.698 r
+  regs/U441/Y (NAND2X0_RVT)                              0.064      2.762 f
+  regs/U342/Y (OR2X1_LVT)                                0.112      2.873 f
+  regs/U279/Y (INVX0_HVT)                                0.135      3.008 r
+  regs/U295/Y (AOI22X1_HVT)                              1.828      4.836 f
+  regs/U344/Y (AND2X1_LVT)                               0.140      4.976 f
+  regs/U75/Y (AND3X1_RVT)                                0.168      5.143 f
+  regs/U414/Y (NOR2X0_LVT)                               0.107      5.250 r
+  regs/wb_dat_o[0] (uart_regs_opt2)                      0.000      5.250 r
+  wb_interface/wb_dat8_o[0] (uart_wb)                    0.000      5.250 r
+  wb_interface/U7/Y (AO222X1_HVT)                        1.800      7.050 r
+  wb_interface/wb_dat_o_reg[16]/D (DFFARX1_HVT)          0.000      7.050 r
+  data arrival time                                                 7.050
+
+  clock wb_clk (rise edge)                               9.016      9.016
+  clock network delay (ideal)                            0.000      9.016
+  clock uncertainty                                     -0.150      8.866
+  wb_interface/wb_dat_o_reg[16]/CLK (DFFARX1_HVT)        0.000      8.866 r
+  library setup time                                    -1.783      7.082
+  data required time                                                7.082
+  --------------------------------------------------------------------------
+  data required time                                                7.082
+  data arrival time                                                -7.050
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.032
+
+
+  Startpoint: regs/i_uart_sync_flops/sync_dat_o_reg[0]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/receiver/rf_data_in_reg[9]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_opt2      8000                  saed32rvt_ss0p75v125c
+  uart_regs_opt2     8000                  saed32rvt_ss0p75v125c
+  uart_receiver_opt2 8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  regs/i_uart_sync_flops/sync_dat_o_reg[0]/CLK (DFFASRX1_HVT)
+                                                         0.000      0.000 r
+  regs/i_uart_sync_flops/sync_dat_o_reg[0]/Q (DFFASRX1_HVT)
+                                                         3.164      3.164 f
+  regs/i_uart_sync_flops/sync_dat_o[0] (uart_sync_flops_1_1)
+                                                         0.000      3.164 f
+  regs/U355/Y (AND2X1_LVT)                               0.193      3.357 f
+  regs/U48/Y (INVX0_HVT)                                 0.099      3.455 r
+  regs/U447/Y (OA21X1_LVT)                               0.077      3.532 r
+  regs/U446/Y (INVX1_LVT)                                0.073      3.605 f
+  regs/receiver/srx_pad_i (uart_receiver_opt2)           0.000      3.605 f
+  regs/receiver/U23/Y (OR2X1_RVT)                        0.122      3.727 f
+  regs/receiver/U221/Y (INVX0_LVT)                       0.049      3.777 r
+  regs/receiver/U308/Y (AO21X1_HVT)                      1.174      4.950 r
+  regs/receiver/U222/Y (NAND2X0_HVT)                     0.697      5.647 f
+  regs/receiver/U303/Y (AND2X1_LVT)                      0.224      5.872 f
+  regs/receiver/U302/Y (AND2X1_LVT)                      0.125      5.997 f
+  regs/receiver/U298/Y (MUX21X1_HVT)                     1.242      7.239 r
+  regs/receiver/rf_data_in_reg[9]/D (DFFARX1_HVT)        0.000      7.239 r
+  data arrival time                                                 7.239
+
+  clock wb_clk (rise edge)                               9.016      9.016
+  clock network delay (ideal)                            0.000      9.016
+  clock uncertainty                                     -0.150      8.866
+  regs/receiver/rf_data_in_reg[9]/CLK (DFFARX1_HVT)      0.000      8.866 r
+  library setup time                                    -1.557      7.308
+  data required time                                                7.308
+  --------------------------------------------------------------------------
+  data required time                                                7.308
+  data arrival time                                                -7.239
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.070
+
+
+  Startpoint: wb_interface/wb_sel_is_reg[2]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/lcr_reg[2]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_opt2      8000                  saed32rvt_ss0p75v125c
+  uart_wb            8000                  saed32rvt_ss0p75v125c
+  uart_regs_opt2     8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  wb_interface/wb_sel_is_reg[2]/CLK (DFFARX1_HVT)        0.000      0.000 r
+  wb_interface/wb_sel_is_reg[2]/Q (DFFARX1_HVT)          2.195      2.195 r
+  wb_interface/U33/Y (NOR3X0_HVT)                        1.433      3.628 f
+  wb_interface/U19/Y (NOR3X0_HVT)                        1.171      4.799 r
+  wb_interface/U5/Y (AND2X1_HVT)                         0.899      5.698 r
+  wb_interface/U79/Y (OR3X1_RVT)                         0.246      5.944 r
+  wb_interface/wb_dat8_i[2] (uart_wb)                    0.000      5.944 r
+  regs/wb_dat_i[2] (uart_regs_opt2)                      0.000      5.944 r
+  regs/U341/Y (MUX21X1_HVT)                              1.290      7.235 r
+  regs/lcr_reg[2]/D (DFFARX1_HVT)                        0.000      7.235 r
+  data arrival time                                                 7.235
+
+  clock wb_clk (rise edge)                               9.016      9.016
+  clock network delay (ideal)                            0.000      9.016
+  clock uncertainty                                     -0.150      8.866
+  regs/lcr_reg[2]/CLK (DFFARX1_HVT)                      0.000      8.866 r
+  library setup time                                    -1.558      7.308
+  data required time                                                7.308
+  --------------------------------------------------------------------------
+  data required time                                                7.308
+  data arrival time                                                -7.235
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.073
+
+
+  Startpoint: wb_interface/wb_sel_is_reg[2]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: regs/ier_reg[2]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_opt2      8000                  saed32rvt_ss0p75v125c
+  uart_wb            8000                  saed32rvt_ss0p75v125c
+  uart_regs_opt2     8000                  saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  wb_interface/wb_sel_is_reg[2]/CLK (DFFARX1_HVT)        0.000      0.000 r
+  wb_interface/wb_sel_is_reg[2]/Q (DFFARX1_HVT)          2.195      2.195 r
+  wb_interface/U33/Y (NOR3X0_HVT)                        1.433      3.628 f
+  wb_interface/U19/Y (NOR3X0_HVT)                        1.171      4.799 r
+  wb_interface/U5/Y (AND2X1_HVT)                         0.899      5.698 r
+  wb_interface/U79/Y (OR3X1_RVT)                         0.246      5.944 r
+  wb_interface/wb_dat8_i[2] (uart_wb)                    0.000      5.944 r
+  regs/wb_dat_i[2] (uart_regs_opt2)                      0.000      5.944 r
+  regs/U164/Y (MUX21X1_HVT)                              1.290      7.235 r
+  regs/ier_reg[2]/D (DFFARX1_HVT)                        0.000      7.235 r
+  data arrival time                                                 7.235
+
+  clock wb_clk (rise edge)                               9.016      9.016
+  clock network delay (ideal)                            0.000      9.016
+  clock uncertainty                                     -0.150      8.866
+  regs/ier_reg[2]/CLK (DFFARX1_HVT)                      0.000      8.866 r
+  library setup time                                    -1.557      7.308
+  data required time                                                7.308
+  --------------------------------------------------------------------------
+  data required time                                                7.308
+  data arrival time                                                -7.235
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.074
+
+
+  Startpoint: wb_interface/wb_sel_is_reg[2]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: wb_interface/wb_dat_o_reg[4]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_opt2      8000                  saed32rvt_ss0p75v125c
+  uart_wb            8000                  saed32rvt_ss0p75v125c
+  uart_debug_if      ForQA                 saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  wb_interface/wb_sel_is_reg[2]/CLK (DFFARX1_HVT)        0.000      0.000 r
+  wb_interface/wb_sel_is_reg[2]/Q (DFFARX1_HVT)          2.282      2.282 f
+  wb_interface/U108/Y (AND3X1_LVT)                       0.288      2.570 f
+  wb_interface/U110/Y (OR2X1_RVT)                        0.177      2.747 f
+  wb_interface/wb_adr_int[0] (uart_wb)                   0.000      2.747 f
+  dbg/wb_adr_i[0] (uart_debug_if)                        0.000      2.747 f
+  dbg/U24/Y (OR3X1_LVT)                                  0.097      2.844 f
+  dbg/U42/Y (OR2X1_HVT)                                  0.384      3.228 f
+  dbg/U8/Y (IBUFFX2_RVT)                                 0.301      3.529 r
+  dbg/U11/Y (AO22X1_HVT)                                 1.247      4.776 r
+  dbg/wb_dat32_o[4] (uart_debug_if)                      0.000      4.776 r
+  wb_interface/wb_dat32_o[4] (uart_wb)                   0.000      4.776 r
+  wb_interface/U56/Y (AO222X1_HVT)                       2.216      6.992 r
+  wb_interface/wb_dat_o_reg[4]/D (DFFARX1_HVT)           0.000      6.992 r
+  data arrival time                                                 6.992
+
+  clock wb_clk (rise edge)                               9.016      9.016
+  clock network delay (ideal)                            0.000      9.016
+  clock uncertainty                                     -0.150      8.866
+  wb_interface/wb_dat_o_reg[4]/CLK (DFFARX1_HVT)         0.000      8.866 r
+  library setup time                                    -1.783      7.082
+  data required time                                                7.082
+  --------------------------------------------------------------------------
+  data required time                                                7.082
+  data arrival time                                                -6.992
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.090
+
+
+  Startpoint: wb_interface/wb_sel_is_reg[2]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: wb_interface/wb_dat_o_reg[23]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_opt2      8000                  saed32rvt_ss0p75v125c
+  uart_wb            8000                  saed32rvt_ss0p75v125c
+  uart_debug_if      ForQA                 saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  wb_interface/wb_sel_is_reg[2]/CLK (DFFARX1_HVT)        0.000      0.000 r
+  wb_interface/wb_sel_is_reg[2]/Q (DFFARX1_HVT)          2.282      2.282 f
+  wb_interface/U108/Y (AND3X1_LVT)                       0.288      2.570 f
+  wb_interface/U110/Y (OR2X1_RVT)                        0.177      2.747 f
+  wb_interface/wb_adr_int[0] (uart_wb)                   0.000      2.747 f
+  dbg/wb_adr_i[0] (uart_debug_if)                        0.000      2.747 f
+  dbg/U24/Y (OR3X1_LVT)                                  0.097      2.844 f
+  dbg/U42/Y (OR2X1_HVT)                                  0.384      3.228 f
+  dbg/U8/Y (IBUFFX2_RVT)                                 0.301      3.529 r
+  dbg/U39/Y (AO22X1_HVT)                                 1.247      4.776 r
+  dbg/wb_dat32_o[23] (uart_debug_if)                     0.000      4.776 r
+  wb_interface/wb_dat32_o[23] (uart_wb)                  0.000      4.776 r
+  wb_interface/U73/Y (AO222X1_HVT)                       2.216      6.992 r
+  wb_interface/wb_dat_o_reg[23]/D (DFFARX1_HVT)          0.000      6.992 r
+  data arrival time                                                 6.992
+
+  clock wb_clk (rise edge)                               9.016      9.016
+  clock network delay (ideal)                            0.000      9.016
+  clock uncertainty                                     -0.150      8.866
+  wb_interface/wb_dat_o_reg[23]/CLK (DFFARX1_HVT)        0.000      8.866 r
+  library setup time                                    -1.783      7.082
+  data required time                                                7.082
+  --------------------------------------------------------------------------
+  data required time                                                7.082
+  data arrival time                                                -6.992
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.090
+
+
+  Startpoint: wb_interface/wb_sel_is_reg[2]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: wb_interface/wb_dat_o_reg[5]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_opt2      8000                  saed32rvt_ss0p75v125c
+  uart_wb            8000                  saed32rvt_ss0p75v125c
+  uart_debug_if      ForQA                 saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  wb_interface/wb_sel_is_reg[2]/CLK (DFFARX1_HVT)        0.000      0.000 r
+  wb_interface/wb_sel_is_reg[2]/Q (DFFARX1_HVT)          2.282      2.282 f
+  wb_interface/U108/Y (AND3X1_LVT)                       0.288      2.570 f
+  wb_interface/U110/Y (OR2X1_RVT)                        0.177      2.747 f
+  wb_interface/wb_adr_int[0] (uart_wb)                   0.000      2.747 f
+  dbg/wb_adr_i[0] (uart_debug_if)                        0.000      2.747 f
+  dbg/U24/Y (OR3X1_LVT)                                  0.097      2.844 f
+  dbg/U42/Y (OR2X1_HVT)                                  0.384      3.228 f
+  dbg/U8/Y (IBUFFX2_RVT)                                 0.301      3.529 r
+  dbg/U17/Y (AO22X1_HVT)                                 1.247      4.776 r
+  dbg/wb_dat32_o[5] (uart_debug_if)                      0.000      4.776 r
+  wb_interface/wb_dat32_o[5] (uart_wb)                   0.000      4.776 r
+  wb_interface/U49/Y (AO222X1_HVT)                       2.216      6.992 r
+  wb_interface/wb_dat_o_reg[5]/D (DFFARX1_HVT)           0.000      6.992 r
+  data arrival time                                                 6.992
+
+  clock wb_clk (rise edge)                               9.016      9.016
+  clock network delay (ideal)                            0.000      9.016
+  clock uncertainty                                     -0.150      8.866
+  wb_interface/wb_dat_o_reg[5]/CLK (DFFARX1_HVT)         0.000      8.866 r
+  library setup time                                    -1.783      7.082
+  data required time                                                7.082
+  --------------------------------------------------------------------------
+  data required time                                                7.082
+  data arrival time                                                -6.992
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.090
+
+
+  Startpoint: wb_interface/wb_sel_is_reg[2]
+              (rising edge-triggered flip-flop clocked by wb_clk)
+  Endpoint: wb_interface/wb_dat_o_reg[20]
+            (rising edge-triggered flip-flop clocked by wb_clk)
+  Path Group: wb_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  uart_top_opt2      8000                  saed32rvt_ss0p75v125c
+  uart_wb            8000                  saed32rvt_ss0p75v125c
+  uart_debug_if      ForQA                 saed32rvt_ss0p75v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock wb_clk (rise edge)                               0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  wb_interface/wb_sel_is_reg[2]/CLK (DFFARX1_HVT)        0.000      0.000 r
+  wb_interface/wb_sel_is_reg[2]/Q (DFFARX1_HVT)          2.282      2.282 f
+  wb_interface/U108/Y (AND3X1_LVT)                       0.288      2.570 f
+  wb_interface/U110/Y (OR2X1_RVT)                        0.177      2.747 f
+  wb_interface/wb_adr_int[0] (uart_wb)                   0.000      2.747 f
+  dbg/wb_adr_i[0] (uart_debug_if)                        0.000      2.747 f
+  dbg/U24/Y (OR3X1_LVT)                                  0.097      2.844 f
+  dbg/U42/Y (OR2X1_HVT)                                  0.384      3.228 f
+  dbg/U7/Y (IBUFFX2_RVT)                                 0.298      3.526 r
+  dbg/U30/Y (AO22X1_HVT)                                 1.245      4.771 r
+  dbg/wb_dat32_o[20] (uart_debug_if)                     0.000      4.771 r
+  wb_interface/wb_dat32_o[20] (uart_wb)                  0.000      4.771 r
+  wb_interface/U58/Y (AO222X1_HVT)                       2.216      6.987 r
+  wb_interface/wb_dat_o_reg[20]/D (DFFARX1_HVT)          0.000      6.987 r
+  data arrival time                                                 6.987
+
+  clock wb_clk (rise edge)                               9.016      9.016
+  clock network delay (ideal)                            0.000      9.016
+  clock uncertainty                                     -0.150      8.866
+  wb_interface/wb_dat_o_reg[20]/CLK (DFFARX1_HVT)        0.000      8.866 r
+  library setup time                                    -1.783      7.082
+  data required time                                                7.082
+  --------------------------------------------------------------------------
+  data required time                                                7.082
+  data arrival time                                                -6.987
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.095
+
+
+1

@@ -1,0 +1,33 @@
+****************************************
+Report : Averaged Power
+	-nosplit
+Design : uart_top_opt2
+Version: V-2023.12-SP5-4
+Date   : Wed Jun  3 01:25:48 2026
+****************************************
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network           4.146e-05    0.0000    0.0000 4.146e-05 (43.19%)  i
+register                2.735e-07 1.175e-07 2.473e-05 2.512e-05 (26.17%)  
+combinational           1.705e-06 8.597e-07 2.684e-05 2.940e-05 (30.63%)  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000 3.659e-10    0.0000 3.659e-10 ( 0.00%)  
+
+  Net Switching Power  = 9.775e-07   ( 1.02%)
+  Cell Internal Power  = 4.344e-05   (45.25%)
+  Cell Leakage Power   = 5.157e-05   (53.73%)
+                         ---------
+Total Power            = 9.598e-05  (100.00%)
+
+1

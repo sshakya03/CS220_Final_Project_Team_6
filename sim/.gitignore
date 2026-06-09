@@ -1,0 +1,5 @@
+-e csrc/
+simv
+simv.daidir/
+*.txt
+*.log

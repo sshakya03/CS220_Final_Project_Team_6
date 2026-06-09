@@ -1,9 +1,0 @@
-{"vcs1":{"timestamp_begin":1778031243.510240973, "rt":0.84, "ut":0.40, "st":0.16}}
-{"vcselab":{"timestamp_begin":1778031244.495963387, "rt":0.47, "ut":0.25, "st":0.11}}
-{"link":{"timestamp_begin":1778031245.167254797, "rt":0.38, "ut":0.19, "st":0.11}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1778031242.668709109}
-{"VCS_COMP_START_TIME": 1778031242.668709109}
-{"VCS_COMP_END_TIME": 1778031245.848147928}
-{"VCS_USER_OPTIONS": "uart_cs220_testbench.v ../rtl/raminfr.v ../rtl/timescale.v ../rtl/uart_debug_if.v ../rtl/uart_defines.v ../rtl/uart_receiver.v ../rtl/uart_regs.v ../rtl/uart_rfifo.v ../rtl/uart_sync_flops.v ../rtl/uart_tfifo.v ../rtl/uart_top.v ../rtl/uart_transmitter.v ../rtl/uart_wb.v -full64 -debug_access+all +v2k +incdir+../rtl"}
-{"vcs1": {"peak_mem": 407896}}
-{"vcselab": {"peak_mem": 265364}}
